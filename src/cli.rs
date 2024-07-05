@@ -1,6 +1,5 @@
 use clap::{Command, Arg, arg, command};
 
-
 pub fn build_cli() -> Command {
     command!()
         .author("alexrad@880gmail.com")
@@ -20,6 +19,10 @@ pub fn build_cli() -> Command {
         .subcommand(
             Command::new("list")
                 .about("List all to-do items")
+        )
+        .subcommand(
+            Command::new("save")
+                .about("Save the list to file")
         )
         .arg(arg!(-d --debug "Turns on debugging info"))
         .after_help("Longer explanation to appear after the options when \
